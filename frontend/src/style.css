@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {font-family:'DM Sans',sans-serif;background:#f3f8f7;color:#19313b}
+* {box-sizing:border-box}
+body {margin:0}
+.app-shell {max-width:1020px;margin:auto;padding:38px 24px}
+.app-header {padding:22px 0 28px}
+.stack {font-size:11px;letter-spacing:.15em;font-weight:800;color:#128d72}
+.stack span {color:#9caca9;padding:0 5px}
+.header-row {display:flex;align-items:center;justify-content:space-between;gap:20px}
+.header-row h1 {font:600 clamp(30px,4.5vw,50px)/1.15 'Space Grotesk',sans-serif;letter-spacing:-.05em;margin:16px 0 10px}
+.header-row h1 em {font-style:normal;color:#16a580}
+.header-row p {font-size:14px;color:#698187;margin:0}
+.new-thread {flex-shrink:0;background:#193d44;color:#fff;border:0;border-radius:9px;padding:12px 17px;font-weight:700;cursor:pointer}
+.process {display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:27px}
+.process span {border:1px solid #d4e8e3;background:#e7f4ef;color:#457b6d;font-size:11px;font-weight:700;border-radius:7px;padding:8px 11px}
+.process b {font-weight:400;color:#9ab8af}
+.chat-panel {background:white;border:1px solid #e1e9e6;border-radius:18px;overflow:hidden;box-shadow:0 16px 45px #1b54550b}
+.chat-meta {min-height:60px;border-bottom:1px solid #e5eeea;padding:18px 23px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+.chat-meta strong {font-weight:800}
+.chat-meta code {background:#edf6f3;border-radius:4px;padding:3px 6px;color:#388774}
+.chat-meta small {color:#8ba39d}
+.online-dot {display:inline-block;border-radius:50%;background:#27b68c;width:9px;height:9px;margin-right:8px;box-shadow:0 0 0 3px #e0f5ea}
+.chat-content {height:min(70vh,680px);min-height:430px;padding:0 8px}
+.copilot-chat {height:100%;width:100%}
+.hitl-card {background:#f0fbf5;border:1px solid #bde8d3;border-radius:12px;padding:18px 20px;margin:10px;color:#25483c}
+.hitl-overline {color:#18815f;font-size:11px;letter-spacing:.1em;font-weight:800}
+.hitl-card h3 {font:600 19px 'Space Grotesk',sans-serif;margin:10px 0 5px}
+.hitl-card p {font-size:13px;line-height:1.65;color:#597a6f}
+.hitl-actions {display:flex;flex-wrap:wrap;gap:10px;margin-top:13px}
+.hitl-actions button {cursor:pointer;border-radius:8px;padding:11px 14px;font-size:13px;font-weight:700}
+.button-approve {background:#1c9775;border:1px solid #1c9775;color:white}
+.button-reject {background:white;border:1px solid #b2c9c1;color:#3e6859}
+.completed-banner {background:#edf8f0;border-top:1px solid #d0e7d9;color:#347f54;font-size:12px;padding:12px 23px}
+footer {text-align:center;color:#8ca19d;font-size:11px;padding-top:22px}
+@media(max-width:640px){.app-shell{padding:12px}.app-header{padding:18px 6px}.header-row{align-items:flex-start;flex-direction:column}.header-row h1{font-size:32px}.new-thread{align-self:flex-start}.chat-meta{flex-wrap:wrap;padding:14px}.chat-content{min-height:460px}}

@@ -1,0 +1,28 @@
+services:
+  mongo:
+    image: mongo:7.0
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build: .
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?Configure OPENAI_API_KEY no arquivo .env}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
+      MONGODB_URI: mongodb://mongo:27017
+      MONGODB_DATABASE: agent_checkpoints
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+volumes:
+  mongo_data:

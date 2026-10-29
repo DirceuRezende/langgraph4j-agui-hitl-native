@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: langgraph4j-agui-hitl
+  threads:
+    virtual:
+      enabled: true
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      chat:
+        options:
+          model: ${OPENAI_MODEL:gpt-4.1-mini}
+          temperature: 0.3
+
+app:
+  mongo:
+    uri: ${MONGODB_URI:mongodb://localhost:27017}
+    database: ${MONGODB_DATABASE:agent_checkpoints}
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
